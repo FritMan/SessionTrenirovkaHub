@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -24,6 +25,12 @@ namespace Session1WPF.Pages
         public MainMenu()
         {
             InitializeComponent();
+
+            DoubleAnimation buttonAnimation = new DoubleAnimation();
+            buttonAnimation.From = FunLabel.ActualWidth;
+            buttonAnimation.To = 180;
+            buttonAnimation.Duration = TimeSpan.FromSeconds(5);
+            FunLabel.BeginAnimation(Button.WidthProperty, buttonAnimation);
         }
 
         private void EventPart_Click(object sender, RoutedEventArgs e)
@@ -40,5 +47,7 @@ namespace Session1WPF.Pages
         {
             NavigationService.Navigate(new CultureMenu());
         }
+
+
     }
 }

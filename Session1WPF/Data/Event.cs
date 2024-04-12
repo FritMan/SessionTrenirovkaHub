@@ -23,6 +23,8 @@ public partial class Event
 
     public string Description { get; set; } = null!;
 
+    public string Name { get; set; } = null!;
+
     public virtual Space Spaces { get; set; } = null!;
 
     public virtual TypeOfEvent TypeOfEvents { get; set; } = null!;

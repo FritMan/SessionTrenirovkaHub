@@ -12,5 +12,6 @@
         <Button x:Name="EventPart" Click="EventPart_Click" Content="Развлекательная деятельность" Width="200"/>
         <Button x:Name="EducPart" Click="EducPart_Click" Content="Образовательная деятельность" Width="200"/>
         <Button x:Name="CulturePart" Click="CulturePart_Click" Content="Культурно-просв. деятельность" Width="200"/>
+        <Label x:Name="FunLabel" Content="ООО Керамогранит Солнцево" Width="0"/> 
     </StackPanel>
 </Page>

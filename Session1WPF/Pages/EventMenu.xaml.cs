@@ -35,5 +35,10 @@ namespace Session1WPF.Pages
         {
             NavigationService.Navigate(new TypesDG());
         }
+
+        private void LocationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LocationsDG());
+        }
     }
 }
