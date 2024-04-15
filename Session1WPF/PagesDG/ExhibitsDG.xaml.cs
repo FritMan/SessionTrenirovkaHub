@@ -121,6 +121,8 @@ namespace Session1WPF.PagesDG
                                 else
                                 {
                                     created_Exhibit.Studios = new Studio();
+                                    created_Exhibit.Studios.Name = row[0].ToString();
+                                    created_Exhibit.Studios.Description = row[1].ToString();
                                 }
 
                                 if(Db.Exhibits.FirstOrDefault(el => el.Name == created_Exhibit.Name && el.Studios == created_Exhibit.Studios) != null)

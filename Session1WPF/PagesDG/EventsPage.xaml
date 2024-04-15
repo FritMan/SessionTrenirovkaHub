@@ -13,10 +13,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="ExhibitDG" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid x:Name="EventDG" Grid.Row="0" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Дата проведения:" Binding="{Binding DateStar}"/>
-                <DataGridTextColumn Header="Название мероприятия:" Binding="{Binding Studios.Name}"/>
+                <DataGridTextColumn Header="Дата проведения:" Binding="{Binding DateStart}"/>
+                <DataGridTextColumn Header="Название мероприятия:" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Тип мероприятия:" Binding="{Binding TypeOfEvents.Name}"/>
+                <DataGridTextColumn Header="Время начала:" Binding="{Binding TimeStart}"/>
+                <DataGridTextColumn Header="Время окончания:" Binding="{Binding TimeEnd}"/>
+                <DataGridTextColumn Header="Кол-во посетителей:" Binding="{Binding NumberOfVisitors}"/>
+                <DataGridTextColumn Header="Стоимость за вход:" Binding="{Binding Paid}"/>
+                <DataGridTextColumn Header="Описание:" Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
 

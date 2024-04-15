@@ -11,5 +11,6 @@
         <Button x:Name="SpacesBtn" Click="SpacesBtn_Click" Content="Пространства" Width="150"/>
         <Button x:Name="TypesEventBtn" Click="TypesEventBtn_Click" Content="Типы мероприятий" Width="150"/>
         <Button x:Name="LocationBtn" Click="LocationBtn_Click" Content="Локации" Width="150"/>
+        <Button x:Name="EventBtn" Click="EventBtn_Click" Content="Мероприятия" Width="150"/>
     </StackPanel>
 </Page>

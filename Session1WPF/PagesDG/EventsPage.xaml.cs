@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Session1WPF.Classes.Helper;
 
 namespace Session1WPF.PagesDG
 {
@@ -23,6 +25,16 @@ namespace Session1WPF.PagesDG
         public EventsPage()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            Db.TypeOfEvents.Load();
+            Db.Studios.Load();
+            Db.Events.Load();
+
+            EventDG.ItemsSource = Db.Events.ToList();
         }
     }
 }

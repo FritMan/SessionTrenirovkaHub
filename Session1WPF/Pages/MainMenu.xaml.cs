@@ -48,6 +48,9 @@ namespace Session1WPF.Pages
             NavigationService.Navigate(new CultureMenu());
         }
 
-
+        private void TestBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EventEditPage());
+        }
     }
 }
