@@ -50,7 +50,7 @@ namespace Session1WPF.Pages
 
         private void TestBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EventEditPage());
+            NavigationService.Navigate(new EventEditPage(-1));
         }
     }
 }

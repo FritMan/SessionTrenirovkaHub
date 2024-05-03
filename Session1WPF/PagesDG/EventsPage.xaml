@@ -17,6 +17,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Дата проведения:" Binding="{Binding DateStart}"/>
                 <DataGridTextColumn Header="Название мероприятия:" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Пространство проведения:" Binding="{Binding Spaces.Name}"/>
                 <DataGridTextColumn Header="Тип мероприятия:" Binding="{Binding TypeOfEvents.Name}"/>
                 <DataGridTextColumn Header="Время начала:" Binding="{Binding TimeStart}"/>
                 <DataGridTextColumn Header="Время окончания:" Binding="{Binding TimeEnd}"/>
@@ -27,9 +28,9 @@
         </DataGrid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <Button x:Name="AddEventBtn" Content="Добавить" />
-            <Button x:Name="EditEventBtn" Content="Изменить" />
-            <Button x:Name="DeletEventBtn" Content="Удалить" Background="Red" />
+            <Button x:Name="AddEventBtn" Content="Добавить" Click="AddEventBtn_Click" />
+            <Button x:Name="EditEventBtn" Content="Изменить" Click="EditEventBtn_Click"/>
+            <Button x:Name="DeletEventBtn" Content="Удалить" Background="Red" Click="DeletEventBtn_Click"/>
         </StackPanel>
     </Grid>
 </Page>

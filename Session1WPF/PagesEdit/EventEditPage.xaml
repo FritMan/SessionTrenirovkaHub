@@ -8,13 +8,17 @@
       d:DesignHeight="900" d:DesignWidth="800"
       Title="EventEditPage">
 
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="LocationsStack">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="EventStack">
         <GroupBox Header="Название:">
             <TextBox x:Name="NameTb" Text="{Binding Name}"/>
         </GroupBox>
 
         <GroupBox Header="Тип мероприятия:">
-            <ComboBox x:Name="TypeCb" DisplayMemberPath="Name" SelectedItem="{Binding TypeOfEvent}"/>
+            <ComboBox x:Name="TypeCb" DisplayMemberPath="Name" SelectedItem="{Binding TypeOfEvents}"/>
+        </GroupBox>
+
+        <GroupBox Header="Тип мероприятия:">
+            <ComboBox x:Name="SpacesCb" DisplayMemberPath="Name" SelectedItem="{Binding Spaces}"/>
         </GroupBox>
 
         <GroupBox Header="Дата проведения:">
@@ -41,12 +45,9 @@
             </TextBox>
         </GroupBox>
 
-        <CheckBox x:Name="PaidBtn" HorizontalAlignment="Center" Content="Платно" Margin="20" IsChecked="False" Checked="PaidBtn_Checked"/>
         <GroupBox Header="Стоимость посещения:">
-            <TextBox x:Name="PaidTb" Text="{Binding Paid}" IsReadOnly="True"/>
+            <TextBox x:Name="PaidTb" Text="{Binding Paid}"/>
         </GroupBox>
-
-        <Button x:Name="LocationVisibBtn" Click="LocationVisibBtn_Click" Content="Выбрать локацию" Width="140" Visibility="Hidden"/>
 
         <GroupBox Header="Кол-во посетителей:">
             <TextBox x:Name="NumberOfVisitorsTb" Text="{Binding NumberOfVisitors}"/>
@@ -54,7 +55,7 @@
 
 
         <GroupBox Header="Описание:">
-            <TextBox x:Name="DescriptionTb" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+            <TextBox x:Name="DescriptionTb" Text="{Binding Description}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Height="80"/>
         </GroupBox>
                   
 

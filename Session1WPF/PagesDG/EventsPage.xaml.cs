@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Session1WPF.Data;
+using Session1WPF.PagesEdit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +33,48 @@ namespace Session1WPF.PagesDG
         private void LoadData()
         {
             Db.TypeOfEvents.Load();
-            Db.Studios.Load();
+            Db.Spaces.Load();
             Db.Events.Load();
 
             EventDG.ItemsSource = Db.Events.ToList();
+        }
+
+        private void AddEventBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EventEditPage(-1));
+        }
+
+        private void EditEventBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var selected_event = EventDG.SelectedItem as Event;
+
+            if (selected_event != null)
+            {
+                NavigationService.Navigate(new EventEditPage(selected_event.Id));
+            }
+            else
+            {
+                MessageBox.Show("Выберите мероприятия");
+            }
+        }
+
+        private void DeletEventBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var selected_event = EventDG.SelectedItem as Event;
+
+            if (selected_event != null)
+            {
+                if (MessageBox.Show("Удалить мероприятие?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    Db.Events.Remove(selected_event);
+                    Db.SaveChanges();
+                }
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Выберите мероприятия");
+            }
         }
     }
 }
